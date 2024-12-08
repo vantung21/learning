@@ -9,3 +9,6 @@ Ví dụ: cần chạy file hello.cpp
 
 để kiểm tra cái ternimal hiện tại có đứng đúng chỗ cái file cần chạy k
 thì nhấn 'ls -l' để xem có cái file cần chạy kia không.
+
+
+Hello
