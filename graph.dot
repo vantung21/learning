@@ -1,0 +1,15 @@
+graph G {
+  overlap=scale;
+  sep="+1";
+  nodesep=1.2;
+  ranksep=1.5;
+  splines=true;
+  node [shape=circle, style=filled, fillcolor=lightblue, fontcolor=black, fontsize=10, width=0.8, height=0.8];
+  edge [color=blue, penwidth=2, fontcolor=red, fontsize=13];
+  1 [fillcolor=cyan,style=filled,color=red, penwidth=5];
+  3 [fillcolor=cyan,style=filled,color=red, penwidth=5];
+  2 [fillcolor=lightblue, style=filled];
+  1 -- 2 [label="3", color=black];
+  1 -- 3 [label="5", color=orange, penwidth = 5];
+  2 -- 3 [label="3", color=black];
+}

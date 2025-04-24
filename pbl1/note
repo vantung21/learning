@@ -1,0 +1,4 @@
+dot -Tpng graph.dot -o graph.png   (vẽ đồ thị thên file graph.dot)
+neato -Tpng graph.dot -o graph.png    (vẽ đẹp hơn)
+sfdp -Tpng graph.dot -o graph.png     (vẽ cho đồ thị lớn)
+fdp -Tpng graph.dot -o graph.png
