@@ -342,14 +342,43 @@ void xuatGraphviz(Edge *adj, int v, int *path, int npath) {
 
 void printBanner() {
     system("clear || cls");
-    printf(BOLD BLUE "\n");
-    printf("\t\t\t  ____  ____   _      \n");
-    printf("\t\t\t |  _ \\| __ ) | |     \n");
-    printf("\t\t\t | |_) |  _ \\ | |     \n");
-    printf("\t\t\t |  __/| |_) || |___  \n");
-    printf("\t\t\t |_|   |____/ |_____| \n");
-    printf(RESET);
-    printf(BOLD YELLOW "           PBL1 - DIJKSTRA'S ALGORITHM VISUALIZER\n\n" RESET);
+    printf("\t" BG_WHITE_B YELLOW "%c", 201);
+	for (int i = 1; i < 21; i++){
+		printf("%c", 205);
+	}
+	printf("%c" RESET "\t\t\t\t\t\t\t\t\t",187);
+    printf(BG_WHITE_B BLACK "     \\" BLUE "#############" BLACK "/    " RESET "\n");
+    printf("\t" BG_WHITE_B YELLOW "%c" BLUE "   D                " YELLOW "%c" RESET "\t\t\t\t\t\t\t\t\t", 186, 186);
+    printf(BG_WHITE_B BLACK "      \\" BLUE "###########" BLACK "/     " RESET "\n");
+    printf("\t" BG_WHITE_B YELLOW "%c" RED " B A C H K H O A    " YELLOW "%c" RESET "\t\t\t\t\t\t\t\t\t", 186, 186);
+    printf(BG_WHITE_B BLACK "       \\" BLUE"#########" BLACK "/      " RESET"\n");
+    printf("\t" BG_WHITE_B YELLOW "%c" BLUE "   N @@@@@@" YELLOW "@@" BLUE "@@@@@@ " YELLOW "%c" RESET "\t", 186, 186);
+    printf(BG_BLUE "      " RESET "%c " BG_BLUE "  " RESET "%c   " BG_BLUE "  " RESET "%c" BG_BLUE "        " RESET"%c              " BG_BLUE "  " RESET"%c" BG_BLUE "        " RESET"%c" BG_BLUE "       " RESET "%c\t", 187, 187, 187, 187, 187, 187, 187);
+    printf(BG_WHITE_B BLUE "     _=======%c%c=====    " RESET "\n", 240, 240);
+    printf("\t" BG_WHITE_B YELLOW "%c" BLUE "   A @@@@@@@@" YELLOW "@@" BLUE "@@@@ " YELLOW "%c" RESET "\t", 186, 186);
+    printf(BG_BLUE "  " RESET "%c%c%c" BG_BLUE "  " RESET "%c" BG_BLUE "  " RESET "%c   " BG_BLUE "  " RESET "%c%c%c%c" BG_BLUE "  " RESET "%c%c%c%c              " BG_BLUE "  " RESET "%c%c%c%c" BG_BLUE "  " RESET "%c%c%c%c" BG_BLUE "  " RESET "%c%c%c%c%c%c\t", 201, 205, 205, 187, 186, 186, 200, 205, 205, 201, 205, 205, 188, 186, 200, 205, 205, 201, 205, 205, 188, 201, 205, 205, 205, 205, 188);
+    printf(BG_WHITE_B BLUE "    //    " BLACK "\\" BLUE "#####" BLACK "/   " BLUE "=>  " RESET "\n");
+    printf("\t" BG_WHITE_B YELLOW "%c  " BLUE " N @@@@@@@@*" YELLOW "@@@" BLUE "@@ " YELLOW "%c" RESET "\t", 186, 186);
+    printf(BG_BLUE "  " RESET "%c  " BG_BLUE "  " RESET "%c" BG_BLUE "  " RESET "%c   " BG_BLUE "  " RESET "%c   " BG_BLUE "  " RESET"%c       " BG_BLUE "     " RESET "%c    " BG_BLUE "  " RESET"%c   " BG_BLUE"  " RESET"%c   " BG_BLUE "     " RESET "%c\t", 186, 186, 186, 186, 186, 187, 186, 186, 187);
+    printf(BG_WHITE_B BLUE "  <=      " BLACK"/" BLUE "####" BLACK"/  " BLUE"//    " RESET "\n");
+    printf("\t" BG_WHITE_B YELLOW "%c" BLUE "   G @@@@@@@@" YELLOW "@@@@" BLUE "@@ " YELLOW "%c" RESET "\t", 186, 186);
+    printf(BG_BLUE "  " RESET "%c  " BG_BLUE "  " RESET "%c" BG_BLUE "  " RESET "%c   " BG_BLUE "  " RESET "%c   " BG_BLUE "  " RESET"%c       %c%c%c%c%c%c    " BG_BLUE "  " RESET "%c   " BG_BLUE"  " RESET "%c   " BG_BLUE "  " RESET "%c%c%c%c\t", 186, 186, 186, 186, 186, 200, 205, 205, 205, 205, 188, 186, 186, 201, 205, 205, 188);
+    printf(BG_WHITE_B BLUE "    ========%c%c=====%c    " RESET"\n", 240, 240, 196);
+    printf("\t" BG_WHITE_B YELLOW "%c" BLUE "     @@@@@@@#" YELLOW "@@@@@" BLUE "@ " YELLOW "%c" RESET "\t",186, 186);
+    printf(BG_BLUE "      " RESET "%c%c%c" BG_BLUE "      " RESET "%c%c   " BG_BLUE "  " RESET "%c                 " BG_BLUE"  " RESET "%c   " BG_BLUE"  " RESET "%c   " BG_BLUE"  " RESET "%c\t\t", 201, 188, 200, 201, 188, 186, 186, 186, 186);
+    printf(BG_WHITE_B BLACK "        /" BLUE "#####" BLACK"/         " RESET "\n");
+    printf("\t" BG_WHITE_B YELLOW "%c" BLUE "     @@@@@" YELLOW "@@@@@@@" BLUE "#@ " YELLOW "%c" RESET "\t", 186, 186);
+    printf("%c%c%c%c%c%c%c  %c%c%c%c%c%c%c    %c%c%c                 %c%c%c   %c%c%c   %c%c%c\t\t", 200, 205, 205, 205, 205, 205, 188, 200, 205, 205, 205, 205, 205, 188, 200, 205, 188, 200, 205, 188, 200, 205, 188, 200, 205, 188);
+    printf(BG_WHITE_B BLACK "       /" BLUE "#####" BLACK "/          " RESET "\n");
+    printf("\t" BG_WHITE_B YELLOW "%c" BLUE "     @@" YELLOW "@@@@@@@@@@" BLUE "@@ " YELLOW "%c" RESET "\t\t\t\t\t\t\t\t\t", 186, 186);
+    printf(BG_WHITE_B BLACK " ______________________ " RESET "\n");
+    printf("\t" BG_WHITE_B YELLOW "%c", 200);
+	for (int i = 1; i < 21; i++){
+			printf("%c", 205);
+	}
+	printf("%c" RESET "\t\t\t\t\t\t\t\t\t", 188);
+    printf(BG_WHITE_B BLACK"   I T  F A C U L T Y   " RESET "\n");
+    printf("\n\n");
 }
 
 void printMainMenu(){
