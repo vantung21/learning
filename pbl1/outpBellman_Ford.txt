@@ -1,0 +1,91 @@
+
+Starting Bellman_Ford's algorithm from 2 to 45...
+Step-by-step visualization:
+
+ Lan lap thu 1 
+Current distances:
+ INF    0  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF 
+   Relaxing edge 2->48: new distance = 85
+   Relaxing edge 2->21: new distance = 23
+   Relaxing edge 2->18: new distance = 43
+   Relaxing edge 18->47: new distance = 112
+   Relaxing edge 18->35: new distance = 134
+   Relaxing edge 18->6: new distance = 72
+   Relaxing edge 21->42: new distance = 57
+   Relaxing edge 21->22: new distance = 67
+   Relaxing edge 22->27: new distance = 98
+   Relaxing edge 27->33: new distance = 160
+   Relaxing edge 27->25: new distance = 156
+   Relaxing edge 27->10: new distance = 143
+   Relaxing edge 33->45: new distance = 174
+   Relaxing edge 35->44: new distance = 140
+   Relaxing edge 35->36: new distance = 174
+   Relaxing edge 36->26: new distance = 197
+   Relaxing edge 44->28: new distance = 141
+   Relaxing edge 45->50: new distance = 218
+   Relaxing edge 45->17: new distance = 227
+   Relaxing edge 45->5: new distance = 254
+   Relaxing edge 47->13: new distance = 139
+   Relaxing edge 50->41: new distance = 261
+
+ Lan lap thu 2 
+Current distances:
+ INF    0  INF  INF  254   72  INF  INF  INF  143  INF  INF  139  INF  INF  INF  227   43  INF  INF   23   67  INF  INF  156  197   98  141  INF  INF  INF  INF  160  INF  134  174  INF  INF  INF  INF  261   57  INF  140  174  INF  112   85  INF  218 
+   Relaxing edge 5->30: new distance = 304
+   Relaxing edge 5->15: new distance = 299
+   Relaxing edge 6->11: new distance = 91
+   Relaxing edge 6->10: new distance = 113
+   Relaxing edge 6->7: new distance = 77
+   Relaxing edge 7->30: new distance = 96
+   Relaxing edge 7->3: new distance = 162
+   Relaxing edge 10->40: new distance = 147
+   Relaxing edge 10->32: new distance = 133
+   Relaxing edge 11->43: new distance = 171
+   Relaxing edge 11->25: new distance = 102
+   Relaxing edge 11->16: new distance = 146
+   Relaxing edge 13->37: new distance = 154
+   Relaxing edge 13->23: new distance = 208
+   Relaxing edge 13->14: new distance = 212
+   Relaxing edge 14->12: new distance = 267
+   Relaxing edge 15->19: new distance = 305
+   Relaxing edge 16->31: new distance = 163
+   Relaxing edge 19->46: new distance = 389
+   Relaxing edge 25->29: new distance = 139
+   Relaxing edge 28->1: new distance = 226
+   Relaxing edge 29->4: new distance = 140
+   Relaxing edge 30->39: new distance = 133
+   Relaxing edge 30->35: new distance = 133
+   Relaxing edge 30->1: new distance = 143
+   Relaxing edge 31->8: new distance = 191
+   Relaxing edge 32->38: new distance = 205
+   Relaxing edge 35->44: new distance = 139
+   Relaxing edge 35->36: new distance = 173
+   Relaxing edge 36->26: new distance = 196
+   Relaxing edge 38->49: new distance = 296
+   Relaxing edge 40->41: new distance = 208
+   Relaxing edge 40->23: new distance = 156
+   Relaxing edge 40->12: new distance = 188
+   Relaxing edge 44->28: new distance = 140
+
+ Lan lap thu 3 
+Current distances:
+ 143    0  162  140  254   72   77  191  INF  113   91  188  139  212  299  146  227   43  305  INF   23   67  156  INF  102  196   98  140  139   96  163  133  160  INF  133  173  154  205  133  147  208   57  171  139  174  389  112   85  296  218 
+   Relaxing edge 3->5: new distance = 206
+   Relaxing edge 4->24: new distance = 163
+   Relaxing edge 4->20: new distance = 189
+   Relaxing edge 4->19: new distance = 196
+   Relaxing edge 5->15: new distance = 251
+   Relaxing edge 8->34: new distance = 216
+   Relaxing edge 8->9: new distance = 230
+   Relaxing edge 19->46: new distance = 280
+   Relaxing edge 24->46: new distance = 254
+
+ Lan lap thu 4 
+Current distances:
+ 143    0  162  140  206   72   77  191  230  113   91  188  139  212  251  146  227   43  196  189   23   67  156  163  102  196   98  140  139   96  163  133  160  216  133  173  154  205  133  147  208   57  171  139  174  254  112   85  296  218 
+ 143    0  162  140  206   72   77  191  230  113   91  188  139  212  251  146  227   43  196  189   23   67  156  163  102  196   98  140  139   96  163  133  160  216  133  173  154  205  133  147  208   57  171  139  174  254  112   85  296  218 
+
+ _FINAL_RESULT_ 
+Shortest distance from (2) to (45): 174
+Path:
+(2) -> (21) -> (22) -> (27) -> (33) -> (45)
