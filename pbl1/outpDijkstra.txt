@@ -1,250 +1,52 @@
 
-Starting Dijkstra's algorithm from 1 to 34...
+Starting Dijkstra's algorithm from 2 to 15...
 Step-by-step visualization:
-
- Processing vertex 1 
-Current distances:
- >0<  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF 
-   Relaxing edge 1->6: new distance = 63
-   Relaxing edge 1->3: new distance = 94
-   Relaxing edge 1->2: new distance = 87
-
- Processing vertex 6 
-Current distances:
- |0|  87  94  INF  INF  >63<  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF 
-   Relaxing edge 6->30: new distance = 152
-   Relaxing edge 6->17: new distance = 131
-   Relaxing edge 6->10: new distance = 136
 
  Processing vertex 2 
 Current distances:
- |0|  >87<  94  INF  INF  |63|  INF  INF  INF  136  INF  INF  INF  INF  INF  INF  131  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  152  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF 
-   Relaxing edge 2->29: new distance = 113
-   Relaxing edge 2->26: new distance = 161
-   Relaxing edge 2->5: new distance = 137
-
- Processing vertex 3 
-Current distances:
- |0|  |87|  >94<  INF  137  |63|  INF  INF  INF  136  INF  INF  INF  INF  INF  INF  131  INF  INF  INF  INF  INF  INF  INF  INF  161  INF  INF  113  152  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF 
-   Relaxing edge 3->12: new distance = 124
-   Relaxing edge 3->8: new distance = 158
-   Relaxing edge 3->4: new distance = 181
-
- Processing vertex 29 
-Current distances:
- |0|  |87|  |94|  181  137  |63|  INF  158  INF  136  INF  124  INF  INF  INF  INF  131  INF  INF  INF  INF  INF  INF  INF  INF  161  INF  INF  >113<  152  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF 
-   Relaxing edge 29->45: new distance = 209
-   Relaxing edge 29->22: new distance = 146
-
- Processing vertex 12 
-Current distances:
- |0|  |87|  |94|  181  137  |63|  INF  158  INF  136  INF  >124<  INF  INF  INF  INF  131  INF  INF  INF  INF  146  INF  INF  INF  161  INF  INF  |113|  152  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  209  INF  INF  INF  INF  INF 
-   Relaxing edge 12->11: new distance = 130
-
- Processing vertex 11 
-Current distances:
- |0|  |87|  |94|  181  137  |63|  INF  158  INF  136  >130<  |124|  INF  INF  INF  INF  131  INF  INF  INF  INF  146  INF  INF  INF  161  INF  INF  |113|  152  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  209  INF  INF  INF  INF  INF 
-
- Processing vertex 17 
-Current distances:
- |0|  |87|  |94|  181  137  |63|  INF  158  INF  136  |130|  |124|  INF  INF  INF  INF  >131<  INF  INF  INF  INF  146  INF  INF  INF  161  INF  INF  |113|  152  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  209  INF  INF  INF  INF  INF 
-
- Processing vertex 10 
-Current distances:
- |0|  |87|  |94|  181  137  |63|  INF  158  INF  >136<  |130|  |124|  INF  INF  INF  INF  |131|  INF  INF  INF  INF  146  INF  INF  INF  161  INF  INF  |113|  152  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  209  INF  INF  INF  INF  INF 
-   Relaxing edge 10->16: new distance = 159
-   Relaxing edge 10->15: new distance = 166
-
- Processing vertex 5 
-Current distances:
- |0|  |87|  |94|  181  >137<  |63|  INF  158  INF  |136|  |130|  |124|  INF  INF  166  159  |131|  INF  INF  INF  INF  146  INF  INF  INF  161  INF  INF  |113|  152  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  209  INF  INF  INF  INF  INF 
-   Relaxing edge 5->39: new distance = 207
-   Relaxing edge 5->13: new distance = 200
-   Relaxing edge 5->7: new distance = 228
-
- Processing vertex 22 
-Current distances:
- |0|  |87|  |94|  181  |137|  |63|  228  158  INF  |136|  |130|  |124|  200  INF  166  159  |131|  INF  INF  INF  INF  >146<  INF  INF  INF  161  INF  INF  |113|  152  INF  INF  INF  INF  INF  INF  INF  INF  207  INF  INF  INF  INF  INF  209  INF  INF  INF  INF  INF 
-   Relaxing edge 22->48: new distance = 228
-
- Processing vertex 30 
-Current distances:
- |0|  |87|  |94|  181  |137|  |63|  228  158  INF  |136|  |130|  |124|  200  INF  166  159  |131|  INF  INF  INF  INF  |146|  INF  INF  INF  161  INF  INF  |113|  >152<  INF  INF  INF  INF  INF  INF  INF  INF  207  INF  INF  INF  INF  INF  209  INF  INF  228  INF  INF 
-   Relaxing edge 30->27: new distance = 157
-   Relaxing edge 30->4: new distance = 172
-
- Processing vertex 27 
-Current distances:
- |0|  |87|  |94|  172  |137|  |63|  228  158  INF  |136|  |130|  |124|  200  INF  166  159  |131|  INF  INF  INF  INF  |146|  INF  INF  INF  161  >157<  INF  |113|  |152|  INF  INF  INF  INF  INF  INF  INF  INF  207  INF  INF  INF  INF  INF  209  INF  INF  228  INF  INF 
-   Relaxing edge 27->49: new distance = 175
-
- Processing vertex 8 
-Current distances:
- |0|  |87|  |94|  172  |137|  |63|  228  >158<  INF  |136|  |130|  |124|  200  INF  166  159  |131|  INF  INF  INF  INF  |146|  INF  INF  INF  161  |157|  INF  |113|  |152|  INF  INF  INF  INF  INF  INF  INF  INF  207  INF  INF  INF  INF  INF  209  INF  INF  228  175  INF 
-   Relaxing edge 8->47: new distance = 226
-   Relaxing edge 8->28: new distance = 240
-   Relaxing edge 8->25: new distance = 180
-
- Processing vertex 16 
-Current distances:
- |0|  |87|  |94|  172  |137|  |63|  228  |158|  INF  |136|  |130|  |124|  200  INF  166  >159<  |131|  INF  INF  INF  INF  |146|  INF  INF  180  161  |157|  240  |113|  |152|  INF  INF  INF  INF  INF  INF  INF  INF  207  INF  INF  INF  INF  INF  209  INF  226  228  175  INF 
-   Relaxing edge 16->19: new distance = 189
-   Relaxing edge 16->18: new distance = 171
-
- Processing vertex 26 
-Current distances:
- |0|  |87|  |94|  172  |137|  |63|  228  |158|  INF  |136|  |130|  |124|  200  INF  166  |159|  |131|  171  189  INF  INF  |146|  INF  INF  180  >161<  |157|  240  |113|  |152|  INF  INF  INF  INF  INF  INF  INF  INF  207  INF  INF  INF  INF  INF  209  INF  226  228  175  INF 
-   Relaxing edge 26->46: new distance = 196
-   Relaxing edge 26->42: new distance = 230
-
- Processing vertex 15 
-Current distances:
- |0|  |87|  |94|  172  |137|  |63|  228  |158|  INF  |136|  |130|  |124|  200  INF  >166<  |159|  |131|  171  189  INF  INF  |146|  INF  INF  180  |161|  |157|  240  |113|  |152|  INF  INF  INF  INF  INF  INF  INF  INF  207  INF  INF  230  INF  INF  209  196  226  228  175  INF 
-   Relaxing edge 15->48: new distance = 174
-   Relaxing edge 15->36: new distance = 217
-
- Processing vertex 18 
-Current distances:
- |0|  |87|  |94|  172  |137|  |63|  228  |158|  INF  |136|  |130|  |124|  200  INF  |166|  |159|  |131|  >171<  189  INF  INF  |146|  INF  INF  180  |161|  |157|  240  |113|  |152|  INF  INF  INF  INF  INF  217  INF  INF  207  INF  INF  230  INF  INF  209  196  226  174  175  INF 
-   Relaxing edge 18->38: new distance = 256
-   Relaxing edge 18->31: new distance = 218
-   Relaxing edge 18->24: new distance = 185
+ INF  >0<  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF 
+   Relaxing edge 2->15: new distance = 77
+   Relaxing edge 2->13: new distance = 41
+   Relaxing edge 2->12: new distance = 60
+   Relaxing edge 2->4: new distance = 18
+   Relaxing edge 2->3: new distance = 65
+   Relaxing edge 2->1: new distance = 37
 
  Processing vertex 4 
 Current distances:
- |0|  |87|  |94|  >172<  |137|  |63|  228  |158|  INF  |136|  |130|  |124|  200  INF  |166|  |159|  |131|  |171|  189  INF  INF  |146|  INF  185  180  |161|  |157|  240  |113|  |152|  218  INF  INF  INF  INF  217  INF  256  207  INF  INF  230  INF  INF  209  196  226  174  175  INF 
-   Relaxing edge 4->35: new distance = 237
-   Relaxing edge 4->9: new distance = 213
+ 37  |0|  65  >18<  INF  INF  INF  INF  INF  INF  INF  60  41  INF  77 
+   Relaxing edge 4->5: new distance = 107
 
- Processing vertex 48 
+ Processing vertex 1 
 Current distances:
- |0|  |87|  |94|  |172|  |137|  |63|  228  |158|  213  |136|  |130|  |124|  200  INF  |166|  |159|  |131|  |171|  189  INF  INF  |146|  INF  185  180  |161|  |157|  240  |113|  |152|  218  INF  INF  INF  237  217  INF  256  207  INF  INF  230  INF  INF  209  196  226  >174<  175  INF 
-
- Processing vertex 49 
-Current distances:
- |0|  |87|  |94|  |172|  |137|  |63|  228  |158|  213  |136|  |130|  |124|  200  INF  |166|  |159|  |131|  |171|  189  INF  INF  |146|  INF  185  180  |161|  |157|  240  |113|  |152|  218  INF  INF  INF  237  217  INF  256  207  INF  INF  230  INF  INF  209  196  226  |174|  >175<  INF 
-
- Processing vertex 25 
-Current distances:
- |0|  |87|  |94|  |172|  |137|  |63|  228  |158|  213  |136|  |130|  |124|  200  INF  |166|  |159|  |131|  |171|  189  INF  INF  |146|  INF  185  >180<  |161|  |157|  240  |113|  |152|  218  INF  INF  INF  237  217  INF  256  207  INF  INF  230  INF  INF  209  196  226  |174|  |175|  INF 
-
- Processing vertex 24 
-Current distances:
- |0|  |87|  |94|  |172|  |137|  |63|  228  |158|  213  |136|  |130|  |124|  200  INF  |166|  |159|  |131|  |171|  189  INF  INF  |146|  INF  >185<  |180|  |161|  |157|  240  |113|  |152|  218  INF  INF  INF  237  217  INF  256  207  INF  INF  230  INF  INF  209  196  226  |174|  |175|  INF 
-
- Processing vertex 19 
-Current distances:
- |0|  |87|  |94|  |172|  |137|  |63|  228  |158|  213  |136|  |130|  |124|  200  INF  |166|  |159|  |131|  |171|  >189<  INF  INF  |146|  INF  |185|  |180|  |161|  |157|  240  |113|  |152|  218  INF  INF  INF  237  217  INF  256  207  INF  INF  230  INF  INF  209  196  226  |174|  |175|  INF 
-
- Processing vertex 46 
-Current distances:
- |0|  |87|  |94|  |172|  |137|  |63|  228  |158|  213  |136|  |130|  |124|  200  INF  |166|  |159|  |131|  |171|  |189|  INF  INF  |146|  INF  |185|  |180|  |161|  |157|  240  |113|  |152|  218  INF  INF  INF  237  217  INF  256  207  INF  INF  230  INF  INF  209  >196<  226  |174|  |175|  INF 
+ >37<  |0|  65  |18|  107  INF  INF  INF  INF  INF  INF  60  41  INF  77 
+   Relaxing edge 1->6: new distance = 118
 
  Processing vertex 13 
 Current distances:
- |0|  |87|  |94|  |172|  |137|  |63|  228  |158|  213  |136|  |130|  |124|  >200<  INF  |166|  |159|  |131|  |171|  |189|  INF  INF  |146|  INF  |185|  |180|  |161|  |157|  240  |113|  |152|  218  INF  INF  INF  237  217  INF  256  207  INF  INF  230  INF  INF  209  |196|  226  |174|  |175|  INF 
-   Relaxing edge 13->41: new distance = 261
-   Relaxing edge 13->20: new distance = 222
-   Relaxing edge 13->14: new distance = 268
+ |37|  |0|  65  |18|  107  118  INF  INF  INF  INF  INF  60  >41<  INF  77 
+   Relaxing edge 13->14: new distance = 124
+   Relaxing edge 13->7: new distance = 73
 
- Processing vertex 39 
+ Processing vertex 12 
 Current distances:
- |0|  |87|  |94|  |172|  |137|  |63|  228  |158|  213  |136|  |130|  |124|  |200|  268  |166|  |159|  |131|  |171|  |189|  222  INF  |146|  INF  |185|  |180|  |161|  |157|  240  |113|  |152|  218  INF  INF  INF  237  217  INF  256  >207<  INF  261  230  INF  INF  209  |196|  226  |174|  |175|  INF 
+ |37|  |0|  65  |18|  107  118  73  INF  INF  INF  INF  >60<  |41|  124  77 
+   Relaxing edge 12->11: new distance = 108
 
- Processing vertex 45 
+ Processing vertex 3 
 Current distances:
- |0|  |87|  |94|  |172|  |137|  |63|  228  |158|  213  |136|  |130|  |124|  |200|  268  |166|  |159|  |131|  |171|  |189|  222  INF  |146|  INF  |185|  |180|  |161|  |157|  240  |113|  |152|  218  INF  INF  INF  237  217  INF  256  |207|  INF  261  230  INF  INF  >209<  |196|  226  |174|  |175|  INF 
-   Relaxing edge 45->40: new distance = 229
-
- Processing vertex 9 
-Current distances:
- |0|  |87|  |94|  |172|  |137|  |63|  228  |158|  >213<  |136|  |130|  |124|  |200|  268  |166|  |159|  |131|  |171|  |189|  222  INF  |146|  INF  |185|  |180|  |161|  |157|  240  |113|  |152|  218  INF  INF  INF  237  217  INF  256  |207|  229  261  230  INF  INF  |209|  |196|  226  |174|  |175|  INF 
-   Relaxing edge 9->33: new distance = 259
-
- Processing vertex 36 
-Current distances:
- |0|  |87|  |94|  |172|  |137|  |63|  228  |158|  |213|  |136|  |130|  |124|  |200|  268  |166|  |159|  |131|  |171|  |189|  222  INF  |146|  INF  |185|  |180|  |161|  |157|  240  |113|  |152|  218  INF  259  INF  237  >217<  INF  256  |207|  229  261  230  INF  INF  |209|  |196|  226  |174|  |175|  INF 
-
- Processing vertex 31 
-Current distances:
- |0|  |87|  |94|  |172|  |137|  |63|  228  |158|  |213|  |136|  |130|  |124|  |200|  268  |166|  |159|  |131|  |171|  |189|  222  INF  |146|  INF  |185|  |180|  |161|  |157|  240  |113|  |152|  >218<  INF  259  INF  237  |217|  INF  256  |207|  229  261  230  INF  INF  |209|  |196|  226  |174|  |175|  INF 
-
- Processing vertex 20 
-Current distances:
- |0|  |87|  |94|  |172|  |137|  |63|  228  |158|  |213|  |136|  |130|  |124|  |200|  268  |166|  |159|  |131|  |171|  |189|  >222<  INF  |146|  INF  |185|  |180|  |161|  |157|  240  |113|  |152|  |218|  INF  259  INF  237  |217|  INF  256  |207|  229  261  230  INF  INF  |209|  |196|  226  |174|  |175|  INF 
-   Relaxing edge 20->34: new distance = 290
-   Relaxing edge 20->23: new distance = 238
-
- Processing vertex 47 
-Current distances:
- |0|  |87|  |94|  |172|  |137|  |63|  228  |158|  |213|  |136|  |130|  |124|  |200|  268  |166|  |159|  |131|  |171|  |189|  |222|  INF  |146|  238  |185|  |180|  |161|  |157|  240  |113|  |152|  |218|  INF  259  290  237  |217|  INF  256  |207|  229  261  230  INF  INF  |209|  |196|  >226<  |174|  |175|  INF 
-   Relaxing edge 47->41: new distance = 249
+ |37|  |0|  >65<  |18|  107  118  73  INF  INF  INF  108  |60|  |41|  124  77 
 
  Processing vertex 7 
 Current distances:
- |0|  |87|  |94|  |172|  |137|  |63|  >228<  |158|  |213|  |136|  |130|  |124|  |200|  268  |166|  |159|  |131|  |171|  |189|  |222|  INF  |146|  238  |185|  |180|  |161|  |157|  240  |113|  |152|  |218|  INF  259  290  237  |217|  INF  256  |207|  229  249  230  INF  INF  |209|  |196|  |226|  |174|  |175|  INF 
-   Relaxing edge 7->44: new distance = 320
+ |37|  |0|  |65|  |18|  107  118  >73<  INF  INF  INF  108  |60|  |41|  124  77 
+   Relaxing edge 7->8: new distance = 101
 
- Processing vertex 40 
+ Processing vertex 15 
 Current distances:
- |0|  |87|  |94|  |172|  |137|  |63|  |228|  |158|  |213|  |136|  |130|  |124|  |200|  268  |166|  |159|  |131|  |171|  |189|  |222|  INF  |146|  238  |185|  |180|  |161|  |157|  240  |113|  |152|  |218|  INF  259  290  237  |217|  INF  256  |207|  >229<  249  230  INF  320  |209|  |196|  |226|  |174|  |175|  INF 
-
- Processing vertex 42 
-Current distances:
- |0|  |87|  |94|  |172|  |137|  |63|  |228|  |158|  |213|  |136|  |130|  |124|  |200|  268  |166|  |159|  |131|  |171|  |189|  |222|  INF  |146|  238  |185|  |180|  |161|  |157|  240  |113|  |152|  |218|  INF  259  290  237  |217|  INF  256  |207|  |229|  249  >230<  INF  320  |209|  |196|  |226|  |174|  |175|  INF 
-   Relaxing edge 42->50: new distance = 283
-
- Processing vertex 35 
-Current distances:
- |0|  |87|  |94|  |172|  |137|  |63|  |228|  |158|  |213|  |136|  |130|  |124|  |200|  268  |166|  |159|  |131|  |171|  |189|  |222|  INF  |146|  238  |185|  |180|  |161|  |157|  240  |113|  |152|  |218|  INF  259  290  >237<  |217|  INF  256  |207|  |229|  249  |230|  INF  320  |209|  |196|  |226|  |174|  |175|  283 
-   Relaxing edge 35->44: new distance = 302
-
- Processing vertex 23 
-Current distances:
- |0|  |87|  |94|  |172|  |137|  |63|  |228|  |158|  |213|  |136|  |130|  |124|  |200|  268  |166|  |159|  |131|  |171|  |189|  |222|  INF  |146|  >238<  |185|  |180|  |161|  |157|  240  |113|  |152|  |218|  INF  259  290  |237|  |217|  INF  256  |207|  |229|  249  |230|  INF  302  |209|  |196|  |226|  |174|  |175|  283 
-   Relaxing edge 23->50: new distance = 282
-
- Processing vertex 28 
-Current distances:
- |0|  |87|  |94|  |172|  |137|  |63|  |228|  |158|  |213|  |136|  |130|  |124|  |200|  268  |166|  |159|  |131|  |171|  |189|  |222|  INF  |146|  |238|  |185|  |180|  |161|  |157|  >240<  |113|  |152|  |218|  INF  259  290  |237|  |217|  INF  256  |207|  |229|  249  |230|  INF  302  |209|  |196|  |226|  |174|  |175|  282 
-   Relaxing edge 28->32: new distance = 336
-
- Processing vertex 41 
-Current distances:
- |0|  |87|  |94|  |172|  |137|  |63|  |228|  |158|  |213|  |136|  |130|  |124|  |200|  268  |166|  |159|  |131|  |171|  |189|  |222|  INF  |146|  |238|  |185|  |180|  |161|  |157|  |240|  |113|  |152|  |218|  336  259  290  |237|  |217|  INF  256  |207|  |229|  >249<  |230|  INF  302  |209|  |196|  |226|  |174|  |175|  282 
-
- Processing vertex 38 
-Current distances:
- |0|  |87|  |94|  |172|  |137|  |63|  |228|  |158|  |213|  |136|  |130|  |124|  |200|  268  |166|  |159|  |131|  |171|  |189|  |222|  INF  |146|  |238|  |185|  |180|  |161|  |157|  |240|  |113|  |152|  |218|  336  259  290  |237|  |217|  INF  >256<  |207|  |229|  |249|  |230|  INF  302  |209|  |196|  |226|  |174|  |175|  282 
-   Relaxing edge 38->43: new distance = 283
-
- Processing vertex 33 
-Current distances:
- |0|  |87|  |94|  |172|  |137|  |63|  |228|  |158|  |213|  |136|  |130|  |124|  |200|  268  |166|  |159|  |131|  |171|  |189|  |222|  INF  |146|  |238|  |185|  |180|  |161|  |157|  |240|  |113|  |152|  |218|  336  >259<  290  |237|  |217|  INF  |256|  |207|  |229|  |249|  |230|  283  302  |209|  |196|  |226|  |174|  |175|  282 
-   Relaxing edge 33->37: new distance = 268
-
- Processing vertex 14 
-Current distances:
- |0|  |87|  |94|  |172|  |137|  |63|  |228|  |158|  |213|  |136|  |130|  |124|  |200|  >268<  |166|  |159|  |131|  |171|  |189|  |222|  INF  |146|  |238|  |185|  |180|  |161|  |157|  |240|  |113|  |152|  |218|  336  |259|  290  |237|  |217|  268  |256|  |207|  |229|  |249|  |230|  283  302  |209|  |196|  |226|  |174|  |175|  282 
-   Relaxing edge 14->21: new distance = 353
-
- Processing vertex 37 
-Current distances:
- |0|  |87|  |94|  |172|  |137|  |63|  |228|  |158|  |213|  |136|  |130|  |124|  |200|  |268|  |166|  |159|  |131|  |171|  |189|  |222|  353  |146|  |238|  |185|  |180|  |161|  |157|  |240|  |113|  |152|  |218|  336  |259|  290  |237|  |217|  >268<  |256|  |207|  |229|  |249|  |230|  283  302  |209|  |196|  |226|  |174|  |175|  282 
-
- Processing vertex 50 
-Current distances:
- |0|  |87|  |94|  |172|  |137|  |63|  |228|  |158|  |213|  |136|  |130|  |124|  |200|  |268|  |166|  |159|  |131|  |171|  |189|  |222|  353  |146|  |238|  |185|  |180|  |161|  |157|  |240|  |113|  |152|  |218|  336  |259|  290  |237|  |217|  |268|  |256|  |207|  |229|  |249|  |230|  283  302  |209|  |196|  |226|  |174|  |175|  >282< 
-
- Processing vertex 43 
-Current distances:
- |0|  |87|  |94|  |172|  |137|  |63|  |228|  |158|  |213|  |136|  |130|  |124|  |200|  |268|  |166|  |159|  |131|  |171|  |189|  |222|  353  |146|  |238|  |185|  |180|  |161|  |157|  |240|  |113|  |152|  |218|  336  |259|  290  |237|  |217|  |268|  |256|  |207|  |229|  |249|  |230|  >283<  302  |209|  |196|  |226|  |174|  |175|  |282| 
-
- Processing vertex 34 
-Current distances:
- |0|  |87|  |94|  |172|  |137|  |63|  |228|  |158|  |213|  |136|  |130|  |124|  |200|  |268|  |166|  |159|  |131|  |171|  |189|  |222|  353  |146|  |238|  |185|  |180|  |161|  |157|  |240|  |113|  |152|  |218|  336  |259|  >290<  |237|  |217|  |268|  |256|  |207|  |229|  |249|  |230|  |283|  302  |209|  |196|  |226|  |174|  |175|  |282| 
+ |37|  |0|  |65|  |18|  107  118  |73|  101  INF  INF  108  |60|  |41|  124  >77< 
 
  _FINAL_RESULT_ 
-Shortest distance from (1) to (34): 290
+Shortest distance from (2) to (15): 77
 Path:
-(1) -> (2) -> (5) -> (13) -> (20) -> (34)
+(2) -> (15)
