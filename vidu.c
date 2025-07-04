@@ -1,41 +1,22 @@
 #include<stdio.h>
+int V=1;
 
-int a[1000], b[1000], c[1000];
+#define INF 9999
 
-int main(){
-    int n,m;
-    scanf("%d%d",&n,&m);
-    for(int i=0; i<n; i++){
-        scanf("%d",&a[i]);
-    }
-    for(int i=0; i<m; i++){
-        scanf("%d",&b[i]);
-    }
-    int cnt=0, i=0, j=0;
-    while(i<n && j<m){
-        if(a[i]<b[j]){
-            c[cnt]=a[i];
-            i++;
-            cnt++;
-        }
-        else{
-            c[cnt]=b[j];
-            j++;
-            cnt++;
+void dijkstra(int graph[V][V], int src) {
+    int L[V], visited[V];
+    for (int i = 0; i < V; i++){
+        visited[i] = 0;
+        L[i] = INF;
+    }     
+        L[src] = 0;    
+        for (int count = 0; count < V - 1; count++) {        
+            int u = minDistance(L, visited);        
+            visited[u] = 1;        
+            for (int v = 0; v < V; v++)            
+            if (!visited[v] && graph[u][v] && L[u] + graph[u][v] < L[v])                
+            L[v] = L[u] + graph[u][v];    
         }
     }
-    while(i<n){
-        c[cnt]=a[i];
-        cnt++; i++;
-    }
-    while(j<m){
-        c[cnt]=b[j];
-        cnt++; j++;
-    } 
-    for(int k=0; k<cnt; k++){
-        printf("%d ",c[k]);
-    }
 
 
-
-}

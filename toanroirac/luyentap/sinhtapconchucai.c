@@ -31,7 +31,7 @@ void Sinh(char a[], int n, int k, int* stop){
 int main(){
     char a[101]; int n, stop;
     scanf("%d",&n);
-    int k = 4;
+    int k = n;
     while(k){
         stop = 1;
         init(a,k);

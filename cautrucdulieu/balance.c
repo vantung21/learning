@@ -55,7 +55,7 @@ element* top(stack s){
 int main(){
     stack S = create(100);
     element *e, e1;
-    char s[] = "(x+3y-{(+5}+6[(uti)])";
+    char s[] = "(x+3y-{+5]]}+6[(uti)])";
     int n = strlen(s);
     for(int i=0; i<n; i++){
         if(s[i] == '(' || s[i] == '{' || s[i] == '['){
@@ -69,6 +69,10 @@ int main(){
             }
             if((s[i] == ')' && top(S)->c == '(') || (s[i] == '}' && top(S)->c == '{') || (s[i] == ']' && top(S)->c == '[')){
                 pop(S);
+            }
+            else{
+                printf("Unbalanced!!\n");
+                return 0;
             }
         }
     }

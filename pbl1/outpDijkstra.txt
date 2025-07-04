@@ -1,52 +1,23 @@
 
-Starting Dijkstra's algorithm from 2 to 15...
+Starting Dijkstra's algorithm from 1 to 5...
 Step-by-step visualization:
-
- Processing vertex 2 
-Current distances:
- INF  >0<  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF  INF 
-   Relaxing edge 2->15: new distance = 77
-   Relaxing edge 2->13: new distance = 41
-   Relaxing edge 2->12: new distance = 60
-   Relaxing edge 2->4: new distance = 18
-   Relaxing edge 2->3: new distance = 65
-   Relaxing edge 2->1: new distance = 37
-
- Processing vertex 4 
-Current distances:
- 37  |0|  65  >18<  INF  INF  INF  INF  INF  INF  INF  60  41  INF  77 
-   Relaxing edge 4->5: new distance = 107
 
  Processing vertex 1 
 Current distances:
- >37<  |0|  65  |18|  107  INF  INF  INF  INF  INF  INF  60  41  INF  77 
-   Relaxing edge 1->6: new distance = 118
+ >0<  INF  INF  INF  INF 
+   Relaxing edge 1->5: new distance = 88
+   Relaxing edge 1->4: new distance = 44
+   Relaxing edge 1->2: new distance = 99
 
- Processing vertex 13 
+ Processing vertex 4 
 Current distances:
- |37|  |0|  65  |18|  107  118  INF  INF  INF  INF  INF  60  >41<  INF  77 
-   Relaxing edge 13->14: new distance = 124
-   Relaxing edge 13->7: new distance = 73
+ |0|  99  INF  >44<  88 
 
- Processing vertex 12 
+ Processing vertex 5 
 Current distances:
- |37|  |0|  65  |18|  107  118  73  INF  INF  INF  INF  >60<  |41|  124  77 
-   Relaxing edge 12->11: new distance = 108
-
- Processing vertex 3 
-Current distances:
- |37|  |0|  >65<  |18|  107  118  73  INF  INF  INF  108  |60|  |41|  124  77 
-
- Processing vertex 7 
-Current distances:
- |37|  |0|  |65|  |18|  107  118  >73<  INF  INF  INF  108  |60|  |41|  124  77 
-   Relaxing edge 7->8: new distance = 101
-
- Processing vertex 15 
-Current distances:
- |37|  |0|  |65|  |18|  107  118  |73|  101  INF  INF  108  |60|  |41|  124  >77< 
+ |0|  99  INF  |44|  >88< 
 
  _FINAL_RESULT_ 
-Shortest distance from (2) to (15): 77
+Shortest distance from (1) to (5): 88
 Path:
-(2) -> (15)
+(1) -> (5)

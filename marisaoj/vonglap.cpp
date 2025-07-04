@@ -1,17 +1,25 @@
 #include<iostream>
-
+#include<math.h>
+#include<string>
 using namespace std;
 
-int ucln(int a, int b){
-    if(b!= 0) return ucln(b, a%b);
-    return a;
-}
 int main(){
-    int a,b;
-    cin>> a>> b;
-    int c = ucln(a,b);
-    cout<< a/c<<" "<<b/c;
+    // long long n;
+    // cin >> n;
+    long long s = 0, base =1 ;
+    string A;
+    cin >> A;
+    for(int i=A.length()-1; i>= 0; i--){
+        if(A[i] == '0'){
+            base *= 2; continue;
+        }
+        else {
+            s+= base;
+            base *=2;
+        }
+    }
+    cout << s;
 
-    
+
     return 0;
 }
