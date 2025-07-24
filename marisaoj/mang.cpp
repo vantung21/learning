@@ -2,21 +2,23 @@
 using namespace std;
 
 int main(){
-    long long a[1000000];
-    long long n, Min = 0;
-    cin >> n;
-    long long max = -99999999;
-    int index = -1;
-    
-    for(int i=0; i<n; i++){
-        cin >> a[i];
-        if(a[i] > max){
-            max = a[i];
-            index = i;
-        }
+    int n, q;
+    cin >> n >> q ;
+    vector<int> arr(n);
+    for(int i = 0; i<n; i++){
+        cin >> arr[i];
     }
-    cout << max << " " << index;
-   
-
+    int cnt = 0, maxlen = 0;
+    for(int i = 0; i<n; i++){
+        if(arr[i] > 0 ){
+            cnt++;
+            if(cnt > maxlen) maxlen = cnt;
+        }
+        else cnt = 0;
+    }
+    cout << maxlen << endl;
+    
+    
     return 0;
+
 }
