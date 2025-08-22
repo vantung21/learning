@@ -1,0 +1,234 @@
+#include <SDL2/SDL.h>
+#include <SDL2/SDL_image.h>
+#include <SDL2/SDL_ttf.h>
+#include <iostream>
+#include <vector>
+#include <string>
+
+// Global constants for game settings
+const int SCREEN_WIDTH = 800;
+const int SCREEN_HEIGHT = 600;
+const int TILE_SIZE = 40;
+const int MAP_WIDTH = SCREEN_WIDTH / TILE_SIZE;
+const int MAP_HEIGHT = (SCREEN_HEIGHT - 100) / TILE_SIZE; // Reserve space for UI
+const int UI_HEIGHT = 100;
+const int DAY_DURATION_MS = 10000; // 10 seconds per day
+
+// Enum for different tile states
+enum TileType {
+    GRASS,
+    DIRT,
+    PLANTED_WHEAT,
+    GROWN_WHEAT
+};
+
+// Struct to hold tile data
+struct Tile {
+    TileType type;
+    int days_to_grow;
+};
+
+// Function to load a texture from a file
+SDL_Texture* loadTexture(const char* path, SDL_Renderer* renderer);
+
+// Function to render text on the screen
+void renderText(SDL_Renderer* renderer, TTF_Font* font, const std::string& text, int x, int y, SDL_Color color);
+
+int main(int argc, char* argv[]) {
+    // --- SDL2 Initialization ---
+    if (SDL_Init(SDL_INIT_VIDEO) < 0) {
+        std::cerr << "SDL could not initialize! Error: " << SDL_GetError() << std::endl;
+        return 1;
+    }
+    if (!(IMG_Init(IMG_INIT_PNG) & IMG_INIT_PNG)) {
+        std::cerr << "SDL_image could not initialize! Error: " << IMG_GetError() << std::endl;
+        return 1;
+    }
+    if (TTF_Init() < 0) {
+        std::cerr << "SDL_ttf could not initialize! Error: " << TTF_GetError() << std::endl;
+        return 1;
+    }
+
+    // --- Window and Renderer Creation ---
+    SDL_Window* window = SDL_CreateWindow("Farm Manager", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
+    if (!window) {
+        std::cerr << "Window creation failed! Error: " << SDL_GetError() << std::endl;
+        SDL_Quit();
+        return 1;
+    }
+
+    SDL_Renderer* renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
+    if (!renderer) {
+        std::cerr << "Renderer creation failed! Error: " << SDL_GetError() << std::endl;
+        SDL_DestroyWindow(window);
+        SDL_Quit();
+        return 1;
+    }
+
+    // --- Load Game Assets ---
+    SDL_Texture* grassTexture = loadTexture("grass.png", renderer);
+    SDL_Texture* dirtTexture = loadTexture("dirt.png", renderer);
+    SDL_Texture* plantedTexture = loadTexture("planted.png", renderer);
+    SDL_Texture* grownTexture = loadTexture("grown.png", renderer);
+    TTF_Font* font = TTF_OpenFont("font.ttf", 24);
+    if (!font) {
+        std::cerr << "Failed to load font! Error: " << TTF_GetError() << std::endl;
+        // Proceed without font, renderText will handle nullptr
+    }
+
+    // --- Game State Variables ---
+    std::vector<std::vector<Tile>> farm_map(MAP_HEIGHT, std::vector<Tile>(MAP_WIDTH, {GRASS, 0}));
+    int money = 50;
+    int seed_count = 5;
+    int current_day = 1;
+    Uint32 last_day_update = SDL_GetTicks();
+    
+    bool running = true;
+    SDL_Event event;
+
+    // --- Main Game Loop ---
+    while (running) {
+        // Handle events (user input)
+        while (SDL_PollEvent(&event)) {
+            if (event.type == SDL_QUIT) {
+                running = false;
+            }
+            if (event.type == SDL_MOUSEBUTTONDOWN) {
+                int mouseX, mouseY;
+                SDL_GetMouseState(&mouseX, &mouseY);
+                
+                // Convert mouse coordinates to map tile coordinates
+                int tileX = mouseX / TILE_SIZE;
+                int tileY = mouseY / TILE_SIZE;
+                
+                // Check if click is on the map
+                if (tileX >= 0 && tileX < MAP_WIDTH && tileY >= 0 && tileY < MAP_HEIGHT) {
+                    Tile& clicked_tile = farm_map[tileY][tileX];
+                    
+                    // Logic for tile interaction
+                    switch (clicked_tile.type) {
+                        case GRASS:
+                            if (money >= 10) {
+                                clicked_tile.type = DIRT;
+                                money -= 10;
+                            }
+                            break;
+                        case DIRT:
+                            if (seed_count >= 1) {
+                                clicked_tile.type = PLANTED_WHEAT;
+                                clicked_tile.days_to_grow = 0;
+                                seed_count -= 1;
+                            }
+                            break;
+                        case GROWN_WHEAT:
+                            clicked_tile.type = DIRT; // Harvest and turn back to dirt
+                            money += 20; // Earn money
+                            break;
+                        default:
+                            break;
+                    }
+                }
+            }
+        }
+
+        // --- Game State Update (Time) ---
+        if (SDL_GetTicks() - last_day_update >= DAY_DURATION_MS) {
+            current_day++;
+            last_day_update = SDL_GetTicks();
+            
+            // Update crop growth
+            for (int y = 0; y < MAP_HEIGHT; ++y) {
+                for (int x = 0; x < MAP_WIDTH; ++x) {
+                    if (farm_map[y][x].type == PLANTED_WHEAT) {
+                        farm_map[y][x].days_to_grow++;
+                        if (farm_map[y][x].days_to_grow >= 3) { // 3 days to grow
+                            farm_map[y][x].type = GROWN_WHEAT;
+                        }
+                    }
+                }
+            }
+        }
+
+        // --- Rendering ---
+        SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+        SDL_RenderClear(renderer);
+
+        // Render the farm map
+        for (int y = 0; y < MAP_HEIGHT; ++y) {
+            for (int x = 0; x < MAP_WIDTH; ++x) {
+                SDL_Rect tileRect = {x * TILE_SIZE, y * TILE_SIZE, TILE_SIZE, TILE_SIZE};
+                SDL_Texture* currentTexture = nullptr;
+                switch (farm_map[y][x].type) {
+                    case GRASS: currentTexture = grassTexture; break;
+                    case DIRT: currentTexture = dirtTexture; break;
+                    case PLANTED_WHEAT: currentTexture = plantedTexture; break;
+                    case GROWN_WHEAT: currentTexture = grownTexture; break;
+                }
+                if (currentTexture) {
+                    SDL_RenderCopy(renderer, currentTexture, nullptr, &tileRect);
+                }
+            }
+        }
+
+        // Render UI
+        SDL_Rect uiRect = {0, SCREEN_HEIGHT - UI_HEIGHT, SCREEN_WIDTH, UI_HEIGHT};
+        SDL_SetRenderDrawColor(renderer, 50, 50, 50, 255);
+        SDL_RenderFillRect(renderer, &uiRect);
+        
+        SDL_Color textColor = {255, 255, 255, 255};
+        renderText(renderer, font, "Tien: " + std::to_string(money), 10, SCREEN_HEIGHT - UI_HEIGHT + 10, textColor);
+        renderText(renderer, font, "Hat giong: " + std::to_string(seed_count), 10, SCREEN_HEIGHT - UI_HEIGHT + 40, textColor);
+        renderText(renderer, font, "Ngay: " + std::to_string(current_day), 10, SCREEN_HEIGHT - UI_HEIGHT + 70, textColor);
+        
+        // Render instructions
+        renderText(renderer, font, "Click vao dat de trong cay. Thu hoach de kiem tien!", SCREEN_WIDTH - 500, SCREEN_HEIGHT - UI_HEIGHT + 40, textColor);
+        
+        SDL_RenderPresent(renderer);
+    }
+
+    // --- Cleanup ---
+    if (grassTexture) SDL_DestroyTexture(grassTexture);
+    if (dirtTexture) SDL_DestroyTexture(dirtTexture);
+    if (plantedTexture) SDL_DestroyTexture(plantedTexture);
+    if (grownTexture) SDL_DestroyTexture(grownTexture);
+    if (font) TTF_CloseFont(font);
+    IMG_Quit();
+    TTF_Quit();
+    SDL_DestroyRenderer(renderer);
+    SDL_DestroyWindow(window);
+    SDL_Quit();
+
+    return 0;
+}
+
+// Function definitions
+SDL_Texture* loadTexture(const char* path, SDL_Renderer* renderer) {
+    SDL_Texture* newTexture = IMG_LoadTexture(renderer, path);
+    if (newTexture == nullptr) {
+        std::cerr << "Failed to load texture from " << path << "! SDL_image Error: " << IMG_GetError() << std::endl;
+    }
+    return newTexture;
+}
+
+void renderText(SDL_Renderer* renderer, TTF_Font* font, const std::string& text, int x, int y, SDL_Color color) {
+    if (!font) return; // Guard against null font
+    
+    SDL_Surface* textSurface = TTF_RenderText_Solid(font, text.c_str(), color);
+    if (textSurface == nullptr) {
+        std::cerr << "Unable to render text surface! SDL_ttf Error: " << TTF_GetError() << std::endl;
+        return;
+    }
+    
+    SDL_Texture* textTexture = SDL_CreateTextureFromSurface(renderer, textSurface);
+    if (textTexture == nullptr) {
+        std::cerr << "Unable to create texture from rendered text! SDL Error: " << SDL_GetError() << std::endl;
+        SDL_FreeSurface(textSurface);
+        return;
+    }
+    
+    SDL_Rect renderQuad = {x, y, textSurface->w, textSurface->h};
+    SDL_RenderCopy(renderer, textTexture, NULL, &renderQuad);
+    
+    SDL_FreeSurface(textSurface);
+    SDL_DestroyTexture(textTexture);
+}
