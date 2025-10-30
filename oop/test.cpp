@@ -1,15 +1,28 @@
 #include <iostream>
 using namespace std;
 
-void swap(int &a, int &b){
-    int t = a; a =b; b = t;
-}
-int main(){
-    int m = 5;
-    int n = 10;
-    void (*pswap)(int &, int &) = swap;
-    (*pswap)(m,n);
-    cout << m << " " << n << endl;
+class Exam
+{
+    int prop;
+public:
+    Exam(int = 1);
+    int operator,(int);
+};
 
+Exam::Exam(int prop)
+    : prop(prop)
+{
+}
+
+int Exam::operator,(int prop)
+{
+    return this->prop;
+}
+
+int main()
+{
+    Exam obj;
+    int var_i = 2;
+    cout << obj.operator,(var_i);
     return 0;
 }

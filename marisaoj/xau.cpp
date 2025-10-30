@@ -26,7 +26,7 @@ int main(){
             cnt = cnt*10 + s2[i] - '0';
             i++;
         }
-        if(i < m && isalha(s2[i])){
+        if(i < m && isalpha(s2[i])){
             res += string(cnt, s2[i]);
             cnt = 0;
         }
