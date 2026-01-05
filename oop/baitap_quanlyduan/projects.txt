@@ -1,0 +1,23 @@
+JournalPaper|123|fghj|tvt|2002|hello|13
+ConferencePaper|99|hoc tap|tvt|2006|learning|Da Nang
+ResearchGrant|21|dfjd|tung|2009|100|21
+ResearchGrant|20|Marine Robotics Exploration|Pham Van T|2018|700|36
+ConferencePaper|12|Human-Computer Interaction|Trinh Van L|2018|UXSummit|Seoul
+ConferencePaper|8|Cybersecurity Challenges|Le Huu H|2019|SecTech|Singapore
+ResearchGrant|15|Water Purification Using Nanotech|Le Hong O|2019|300|18
+JournalPaper|3|Blockchain in Supply Chain Management|Le Quang C|2019|Global Science|2
+JournalPaper|1|Deep Learning for Image Classification|Nguyen Van A|2020|AI Journal|4
+ConferencePaper|7|Autonomous Vehicles and Safety|Tran Quoc G|2020|AutoWorld|Tokyo
+ResearchGrant|17|Smart Waste Management System|Tran Minh Q|2020|250|12
+ResearchGrant|13|AI-based Crop Disease Detection|Nguyen Thi M|2021|500|24
+JournalPaper|4|Quantum Computing Trends|Pham Duc D|2021|Modern Physics|5
+ConferencePaper|6|AI in Healthcare|Nguyen Van F|2021|HealthConf|Hanoi
+ResearchGrant|14|Autonomous Drone Delivery System|Pham Van N|2022|800|36
+JournalPaper|2|Optimization Algorithms in Engineering|Tran Thi B|2022|VN Tech Journal|3
+ConferencePaper|9|Renewable Energy Systems|Do Thi I|2022|EnergyAsia|Da Nang
+JournalPaper|5|IoT Applications for Smart City|Vo Minh E|2023|SmartTech|4
+ResearchGrant|16|5G Network Optimization|Bui Tuan P|2023|1000|30
+ConferencePaper|11|Green Computing and Cloud|Hoang Bao K|2023|CloudNext|Ho Chi Minh
+ResearchGrant|18|Renewable Battery Research|Nguyen Huu R|2024|600|20
+ConferencePaper|10|Big Data in Education|Phan Anh J|2024|EduConf|Bangkok
+ResearchGrant|19|AI for Disaster Prediction|Dang Thi S|2025|900|28

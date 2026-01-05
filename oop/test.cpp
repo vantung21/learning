@@ -1,28 +1,32 @@
 #include <iostream>
 using namespace std;
-
-class Exam
+class Base
 {
-    int prop;
-public:
-    Exam(int = 1);
-    int operator,(int);
+    double prop_b;
+    public:
+    virtual void Func();
 };
 
-Exam::Exam(int prop)
-    : prop(prop)
+void Base::Func()
 {
+    cout << "1";
 }
 
-int Exam::operator,(int prop)
+class Derived : public Base
 {
-    return this->prop;
+    int prop_d = 15;
+    public:
+    void Func();
+};
+
+void Derived::Func()
+{
+    cout << "2";
 }
 
 int main()
 {
-    Exam obj;
-    int var_i = 2;
-    cout << obj.operator,(var_i);
+    Base* ptr;
+    ptr->Func();
     return 0;
 }
